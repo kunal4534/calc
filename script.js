@@ -282,8 +282,5 @@ function shortcutsAction(e) {
         calculator.delete();
         calculator.updateDisplay();
     }
-     if(e.ctrlKey && e.shiftKey && (e.key == ")" )){
-        console.log("clicked");
-     }
-     console.dir(e);
+
 }
