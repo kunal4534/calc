@@ -67,55 +67,13 @@ body {
     cursor: pointer;
 
 }
-.icon-btn{
+
+.icon-btn {
+    padding: 0 2px;
+    background-color: #F4E7E1;
     border: none;
     outline: none;
-    color: transparent;
 }
-    
-  
-
-}
-h1[data-header] {
-    display: inline-block;
-    font-size: 3rem;
-    color: #00aaff;
-    animation: wave 1.4s  ease-in-out forwards;
-
-}
-
-@keyframes wave {
-
-    /* 0% {
-        transform: translateY(0);
-    }
-
-    25% {
-        transform: translateY(-10px);
-    }
-
-    50% {
-        transform: translateY(0);
-    }
-
-    75% {
-        transform: translateY(10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    } */
-    0%
-     {
-        transform: translateY(0);
-        animation-timing-function: ease-in-out;
-    }
-
-    100%{
-        transform: translateY(-50px);
-    }
-}
-
 
 .previous-operand {
     font-size: 15px;
