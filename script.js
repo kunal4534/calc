@@ -106,6 +106,7 @@ class Calculator {
         sessionStorage.setItem("operationData", JSON.stringify([]));
         this.currentOperand = "";
         this.updateDisplay();
+        alert("History deleted!");
 
     }
 
