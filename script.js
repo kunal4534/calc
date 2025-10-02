@@ -106,7 +106,9 @@ class Calculator {
         sessionStorage.setItem("operationData", JSON.stringify([]));
         this.currentOperand = "";
         this.updateDisplay();
-        alert("History deleted!");
+       setTimeout(()=>{
+         alert("History deleted!");
+       },200);
 
     }
 
@@ -222,8 +224,24 @@ const previousOperandTextElement = document.querySelector(".previous-operand");
 const currentOperandInputField = document.querySelector('.current-operand');
 const previousIcon = document.querySelector('[data-previous-icon]');
 const nextIcon = document.querySelector('[data-next-icon]');
+const leftBtn = document.querySelector("[data-left-button]");
+const rightBtn = document.querySelector('[data-right-button]');
 const deleteHistoryBtn = document.querySelector(".delete-history button");
 const calculator = new Calculator(previousOperandTextElement, currentOperandInputField);
+
+leftBtn.addEventListener("click",()=>{
+    calculator.operationData({
+        target:previousIcon
+    });
+
+});
+
+rightBtn.addEventListener("click",()=>{
+    calculator.operationData({
+        target:nextIcon
+    });
+
+});
 
 previousOperandTextElement.addEventListener("animationend", () => {
     previousOperandTextElement.classList.remove("right-to-left", "left-to-right");
@@ -255,12 +273,12 @@ deleteButton.addEventListener("click", () => {
     calculator.delete();
     calculator.updateDisplay();
 });
-previousIcon.addEventListener("click", (e) => {
-    calculator.operationData(e);
-});
-nextIcon.addEventListener("click", (e) => {
-    calculator.operationData(e);
-});
+// previousIcon.addEventListener("click", (e) => {
+//     calculator.operationData(e);
+// });
+// nextIcon.addEventListener("click", (e) => {
+//     calculator.operationData(e);
+// });
 deleteHistoryBtn.addEventListener("click", () => {
     calculator.deleteHistory();
 });

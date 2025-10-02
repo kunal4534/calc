@@ -67,7 +67,15 @@ body {
     cursor: pointer;
 
 }
+.icon-btn{
+    border: none;
+    outline: none;
+    color: transparent;
+}
+    
+  
 
+}
 h1[data-header] {
     display: inline-block;
     font-size: 3rem;
