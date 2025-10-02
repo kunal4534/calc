@@ -105,10 +105,13 @@ class Calculator {
         this.operationArr = [];
         sessionStorage.setItem("operationData", JSON.stringify([]));
         this.currentOperand = "";
+        if (previousIcon.classList.contains("disable")) previousIcon.classList.remove("disable");
+        if (nextIcon.classList.contains("disable")) nextIcon.classList.remove("disable");
         this.updateDisplay();
-       setTimeout(()=>{
-         alert("History deleted!");
-       },200);
+
+        setTimeout(() => {
+            alert("History deleted!");
+        }, 200);
 
     }
 
@@ -143,10 +146,8 @@ class Calculator {
 
         if (this.currentOperand === '') return;
 
-        if (this.previousOperand !== '') {
-            console.log("called");
-            this.compute();
-        }
+        if (this.previousOperand !== '') this.compute();
+
 
         this.operation = operation;
         this.previousOperand = this.currentOperand;
@@ -229,16 +230,16 @@ const rightBtn = document.querySelector('[data-right-button]');
 const deleteHistoryBtn = document.querySelector(".delete-history button");
 const calculator = new Calculator(previousOperandTextElement, currentOperandInputField);
 
-leftBtn.addEventListener("click",()=>{
+leftBtn.addEventListener("click", () => {
     calculator.operationData({
-        target:previousIcon
+        target: previousIcon
     });
 
 });
 
-rightBtn.addEventListener("click",()=>{
+rightBtn.addEventListener("click", () => {
     calculator.operationData({
-        target:nextIcon
+        target: nextIcon
     });
 
 });
@@ -297,7 +298,7 @@ function shortcutsAction(e) {
     if (e.key == "ArrowRight") calculator.operationData({
         target: nextIcon
     });
-    if(e.key == "d"){
+    if (e.key == "d") {
         calculator.delete();
         calculator.updateDisplay();
     }
