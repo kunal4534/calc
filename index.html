@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="flex">
+
+  <div class="card">
+    <section class="container">
+      <div class="display">
+        <div class="previous-operand-container flex">
+          <i class="fa-solid fa-square-caret-left border" title="pervious" data-previous-icon></i>
+          <span class="previous-operand">Operation history</span>
+          <i class="fa-solid fa-square-caret-right border" title="next" data-next-icon></i>
+        </div>
+        <div class="current-operand-container">
+          <input type="text" class="current-operand" readonly maxlength="20">
+          <i class="fa-solid fa-calculator"></i>
+        </div>
+      </div>
+      <div class="delete-history">
+        <button>Delete history</button>
+      </div>
+    </section>
+    <section class="container button-container">
+      <div class="calculator-buttons">
+        <button class="base-style delete" data-all-clear>AC</button>
+        <button class="base-style  delete" data-delete>Del</button>
+        <button class="base-style  " data-operation>*</button>
+        <button class="base-style " data-operation>÷</button>
+        <button class="base-style number" data-number>7</button>
+        <button class="base-style number" data-number>8</button>
+        <button class="base-style number" data-number>9</button>
+        <button class="base-style " data-operation>+</button>
+        <button class="base-style number" data-number>4</button>
+        <button class="base-style number" data-number>5</button>
+        <button class="base-style number" data-number>6</button>
+        <button class="base-style " data-operation>-</button>
+        <button class="base-style number" data-number>1</button>
+        <button class="base-style number" data-number>2</button>
+        <button class="base-style number" data-number>3</button>
+        <button class="base-style equal" data-equal>=</button>
+        <button class="base-style number" data-number>0</button>
+        <button class="base-style number" data-number>00</button>
+        <button class="base-style number" data-number>.</button>
+
+      </div>
+    </section>
+  </div>
+
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

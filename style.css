@@ -1,0 +1,273 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --container-color: rgb(63, 61, 61);
+    --button-container-color: rgb(150, 150, 150);
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: aliceblue;
+    min-height: 100vh;
+    padding: clamp(1rem, 5vw, 4rem);
+}
+
+.card {
+    border-radius: 10px;
+    max-width: 330px;
+    width: 100%;
+
+}
+
+.container {
+    padding: 1rem;
+    background-color: var(--container-color);
+    border-radius: 10px 10px 0 0;
+
+}
+
+.display {
+    background-color: #F4E7E1;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+
+}
+
+.previous-operand-container {
+    justify-content: space-between;
+    padding: 8px 70px 0px 20px;
+    margin-bottom: -5px;
+    height: 20.8px;
+}
+
+.previous-operand-container i {
+    color: rgb(93, 93, 93);
+    font-size: 18px;
+
+}
+
+.border {
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+
+.previous-operand-container i:hover {
+    cursor: pointer;
+
+}
+
+h1[data-header] {
+    display: inline-block;
+    font-size: 3rem;
+    color: #00aaff;
+    animation: wave 1.4s  ease-in-out forwards;
+
+}
+
+@keyframes wave {
+
+    /* 0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    } */
+    0%
+     {
+        transform: translateY(0);
+        animation-timing-function: ease-in-out;
+    }
+
+    100%{
+        transform: translateY(-50px);
+    }
+}
+
+
+.previous-operand {
+    font-size: 15px;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+    max-width: 170px;
+    overflow-x: auto;
+    color: #5b5a5a;
+
+}
+
+.left-to-right {
+    animation: LTR .5s ease forwards;
+}
+
+.right-to-left {
+    animation: RTL .5s ease forwards;
+}
+
+@keyframes LTR {
+    from {
+        opacity: 0;
+        transform: translate(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+
+}
+
+@keyframes RTL {
+    from {
+        opacity: 0;
+        transform: translate(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+
+}
+
+.disable {
+    opacity: 0.2;
+}
+
+input[type="text"] {
+    padding: 0px 50px 0px 8px;
+    border-radius: inherit;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 30px;
+    background-color: transparent;
+    min-height: 60px;
+    text-align: right;
+}
+
+input[type="text"]:hover {
+    cursor: inherit;
+}
+
+.current-operand-container {
+    position: relative;
+}
+
+.current-operand-container i {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    font-size: 30px;
+    opacity: .8;
+
+
+}
+
+.delete-history button {
+    padding: 4px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background-color: #9c928d;
+    color: white;
+    font-size: 12px;
+
+
+}
+
+.button-container {
+    border-radius: 0px 0px 10px 10px;
+    background-color: var(--button-container-color);
+}
+
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.base-style {
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: 200;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.base-style:hover {
+    cursor: pointer;
+}
+
+.equal {
+    grid-row-start: 4;
+    grid-column-start: 4;
+    grid-row-end: 6;
+    /* or  5 span */
+    height: 100%;
+    background-color: var(--container-color);
+    color: white;
+    font-size: 2rem;
+    box-shadow: 0px 5px 10px rgba(228, 226, 226, 0.3);
+}
+
+.number {
+    background-color: var(--button-container-color);
+    color: white;
+
+}
+
+.delete {
+    background-color: var(--button-container-color);
+    color: rgb(226, 58, 58);
+    font-weight: 500;
+}
+
+.clicked {
+    transform: scale(95%);
+    transition: transform .3s ease-out;
+}
+
+button[data-operation] {
+    background-color: var(--button-container-color);
+    color: rgb(228, 228, 135);
+    font-size: 20px;
+}
