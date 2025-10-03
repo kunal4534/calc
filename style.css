@@ -24,7 +24,7 @@ body {
 
 .card {
     border-radius: 10px;
-    max-width: 330px;
+    max-width: 350px;
     width: 100%;
 
 }
@@ -51,28 +51,37 @@ body {
     height: 20.8px;
 }
 
-.previous-operand-container i {
+.left-btn,
+.right-btn {
+    position: relative;
+
+}
+
+.left-btn i,
+.right-btn i {
+    position: relative;
     color: rgb(93, 93, 93);
     font-size: 18px;
-
-}
-
-.border {
-    border: none;
-    outline: none;
-    border-radius: 50px;
-}
-
-.previous-operand-container i:hover {
-    cursor: pointer;
-
+    z-index: 0;
 }
 
 .icon-btn {
-    padding: 0 2px;
-    background-color: #F4E7E1;
-    border: none;
+    position: absolute;
+    left: -2%;
+    height: 18px;
+    width: 25px;
+    padding: 1px;
+    background-color: transparent;
     outline: none;
+    border: none;
+    z-index: 1;
+
+}
+
+
+.icon-btn:hover {
+    cursor: pointer;
+
 }
 
 .previous-operand {
@@ -84,6 +93,10 @@ body {
     overflow-x: auto;
     color: #5b5a5a;
 
+}
+
+.previous-operand:hover {
+    cursor: inherit;
 }
 
 .left-to-right {
@@ -236,4 +249,12 @@ button[data-operation] {
     background-color: var(--button-container-color);
     color: rgb(228, 228, 135);
     font-size: 20px;
+}
+
+@media (min-width:500px) {
+    .card {
+        max-width: 400px;
+
+    }
+
 }
